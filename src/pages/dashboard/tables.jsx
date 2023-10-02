@@ -12,9 +12,8 @@ import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import { authorsTableData, projectsTableData } from "@/data";
 import { useProductsContext } from "@/context/products_context";
 
-
 export function Tables() {
-  const { products } = useProductsContext()
+  const { products } = useProductsContext();
 
   return (
     <div className="mt-12 mb-8 flex flex-col gap-12">
@@ -44,7 +43,7 @@ export function Tables() {
               </tr>
             </thead>
             <tbody>
-            {products.map(
+              {products.map(
                 ({ image, name, price, featured, category, colors }, key) => {
                   const className = `py-3 px-5 ${
                     key === products.length - 1
@@ -95,7 +94,7 @@ export function Tables() {
                       <td className={className}>
                         <Typography
                           as="a"
-                          href="#"
+                          href="editproduct"
                           className="text-xs font-semibold text-blue-gray-600"
                         >
                           Edit
@@ -109,7 +108,6 @@ export function Tables() {
           </table>
         </CardBody>
       </Card>
-      
     </div>
   );
 }
